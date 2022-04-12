@@ -3,12 +3,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CamareroController;
-use App\Http\Controllers\CocineroController;
 use App\Http\Controllers\Ath\RegisterController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CamareroController;
+use App\Http\Controllers\CocineroController;
+
+use App\Models\Comanda;
+use App\Http\Controllers\ComandaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,13 +34,17 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/auth.register', [App\Http\Controllers\AdminController::class, 'index'])->name('register');
 Route::get('/register', [App\Http\Controllers\AdminController::class, 'index'])->name('register');
-Route::get('/camarero', [App\Http\Controllers\CamareroController::class, 'index'])->name('camarero');
+// Route::get('/camarero', [App\Http\Controllers\CamareroController::class, 'index'])->name('camarero');
 
-Route::get('/camarero', function () {
-    return view('camarero');
-});
+// Route::get('/camarero', function () {
+//     return view('camarero');
+// });
 
 Route::resource('/admin', AdminController::class);
 Route::resource('/camarero', CamareroController::class);
-
 Route::resource('/cocinero', CocineroController::class);
+
+Route::post('/comanda', [App\Http\Controllers\ComandaController::class, 'store'])->name('comanda');
+
+
+// Route::resource('/comanda', ComandaController::class);
