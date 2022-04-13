@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comanda;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ComandaController extends Controller
 {
@@ -39,10 +41,11 @@ class ComandaController extends Controller
 
         $comanda->mesa = $request->input('mesa');
         $comanda->comentarios = $request->input('comentarios');
+        $comanda->camarero_id = auth::user()->id;
 
         $comanda->save();
 
-        return redirect('/camarero');
+        return redirect('/camarero')->with('success', 'Comanda creada');
     }
 
     /**

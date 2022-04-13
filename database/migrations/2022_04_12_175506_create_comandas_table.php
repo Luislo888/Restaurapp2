@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 
 return new class extends Migration
 {
@@ -16,7 +17,10 @@ return new class extends Migration
         Schema::create('comandas', function (Blueprint $table) {
             $table->id();
             $table->integer('mesa');
-            $table->string('comentarios');
+            $table->string('comentarios')->nullable();
+            $table->enum('estado', ['abierta', 'en curso', 'cerrada', 'cancelada'])->default('abierta');
+            $table->foreignId('camarero_id')->constrained('users');
+            $table->foreignId('cocinero_id')->nullable()->constrained('users');
             $table->timestamps();
         });
     }

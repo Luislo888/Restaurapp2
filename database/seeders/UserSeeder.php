@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-class TodosSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,23 +18,32 @@ class TodosSeeder extends Seeder
     public function run()
     {
 
-        $useradmin = User::create([
-            'name' => 'admin Luis',
+        $userAdmin = User::create([
+            'name' => 'Admin Luis',
             'last_name' => 'López',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('1234'),
             'rol' => '1',
         ]);
 
-        $user1 = User::create([
-            'name' => 'camarero Marcos',
+        $userCamarero1 = User::create([
+            'name' => 'Camarero Marcos',
             'last_name' => 'García',
             'email' => 'camarero@gmail.com',
             'password' => Hash::make('1234'),
             'rol' => '2',
         ]);
-        $user1 = User::create([
-            'name' => 'cocinero Laura',
+
+        $userCamarero2 = User::create([
+            'name' => 'Camarero Alberto',
+            'last_name' => 'Solana',
+            'email' => 'camarero2@gmail.com',
+            'password' => Hash::make('1234'),
+            'rol' => '2',
+        ]);
+
+        $userCocinero = User::create([
+            'name' => 'Cocinero Laura',
             'last_name' => 'Carmona',
             'email' => 'cocinero@gmail.com',
             'password' => Hash::make('1234'),

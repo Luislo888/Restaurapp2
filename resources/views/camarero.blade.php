@@ -14,10 +14,8 @@
                     </div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
+                        @if (session('success'))
+                            <h6 class="alert alert-success">{{ session('success') }}</h6>
                         @endif
 
                         <form method="POST" action="{{ route('comanda') }}">
