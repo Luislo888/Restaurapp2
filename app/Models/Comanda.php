@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comanda extends Model
 {
-    // public function todos()
-    // {
-    //     return $this->hasMany(Todo::class);
-    // }
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'camarero_id');
+    }
+
+    public function producto()
+    {
+        return $this->belongsToMany(Producto::class, 'comanda_productos', 'comanda_id', 'producto_id');
+    }
 }

@@ -18,7 +18,12 @@ class ComandaSeeder extends Seeder
         $comanda = Comanda::create([
             'mesa' => 1,
             'comentarios' => 'Sin tomate',
-            'camarero_id' => 1,
+            'camarero_id' => 2,
+        ]);
+        $comanda = Comanda::create([
+            'mesa' => 2,
+            'comentarios' => 'Con tomate',
+            'camarero_id' => 2,
         ]);
     }
 }
