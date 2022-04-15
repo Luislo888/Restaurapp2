@@ -11,6 +11,6 @@ class Producto extends Model
 
     public function comanda()
     {
-        return $this->belongsToMany(Comanda::class, 'comanda_productos', 'producto_id', 'comanda_id');
+        return $this->belongsToMany(Comanda::class, 'comandas_productos', 'producto_id', 'comanda_id');
     }
 }

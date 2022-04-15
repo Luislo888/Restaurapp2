@@ -4,10 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\comanda_producto;
+use App\Models\ComandasProductos;
 
-
-class ComandaProductoSeeder extends Seeder
+class ComandasProductosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,31 +15,31 @@ class ComandaProductoSeeder extends Seeder
      */
     public function run()
     {
-        $comanda = comanda_producto::create([
+        $comanda1 = ComandasProductos::create([
             'comanda_id' => 1,
             'producto_id' => 1,
         ]);
-        $comanda = comanda_producto::create([
+        $comanda2 = ComandasProductos::create([
             'comanda_id' => 1,
             'producto_id' => 2,
         ]);
-        $comanda = comanda_producto::create([
+        $comanda3 = ComandasProductos::create([
             'comanda_id' => 1,
             'producto_id' => 3,
         ]);
-        $comanda = comanda_producto::create([
+        $comanda4 = ComandasProductos::create([
             'comanda_id' => 2,
             'producto_id' => 1,
         ]);
-        $comanda = comanda_producto::create([
+        $comanda5 = ComandasProductos::create([
             'comanda_id' => 2,
             'producto_id' => 2,
         ]);
-        $comanda = comanda_producto::create([
+        $comanda6 = ComandasProductos::create([
             'comanda_id' => 2,
             'producto_id' => 3,
         ]);
-        $comanda = comanda_producto::create([
+        $comanda7 = ComandasProductos::create([
             'comanda_id' => 2,
             'producto_id' => 4,
         ]);

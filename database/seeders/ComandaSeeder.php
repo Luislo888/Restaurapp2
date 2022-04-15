@@ -15,12 +15,13 @@ class ComandaSeeder extends Seeder
      */
     public function run()
     {
-        $comanda = Comanda::create([
+        $comanda1 = Comanda::create([
             'mesa' => 1,
             'comentarios' => 'Sin tomate',
             'camarero_id' => 2,
         ]);
-        $comanda = Comanda::create([
+
+        $comanda1 = Comanda::create([
             'mesa' => 2,
             'comentarios' => 'Con tomate',
             'camarero_id' => 2,
