@@ -44,13 +44,13 @@
 
                                 <div class="col-md-6">
 
-                                    <select id="entrantes" name="entrantes"
+                                    <select id="entrantes" name="productos[]"
                                         class="form-control @error('entrantes') is-invalid @enderror"
                                         value="{{ old('entrantes') }}" required autocomplete="entrantes">
                                         <option selected disabled>Elige un entrante</option>
-                                        <option value="1">Cebiche</option>
-                                        <option value="2">Croquetas</option>
-                                        <option value="3">Crudites</option>
+                                        @foreach ($entrantes as $entrante)
+                                            <option value="{{ $entrante->id }}">{{ $entrante->nombre }}</option>
+                                        @endforeach
                                     </select>
 
                                     @error('entrantes')
@@ -67,13 +67,13 @@
 
                                 <div class="col-md-6">
 
-                                    <select id="primeros" name="primeros"
+                                    <select id="primeros" name="productos[]"
                                         class="form-control @error('primeros') is-invalid @enderror"
                                         value="{{ old('primeros') }}" required autocomplete="primeros">
                                         <option selected disabled>Elige un primero</option>
-                                        <option value="1">Ensalada Mixta</option>
-                                        <option value="2">Crema de verduras</option>
-                                        <option value="3">Salmorejo</option>
+                                        @foreach ($primeros as $primero)
+                                            <option value="{{ $primero->id }}">{{ $primero->nombre }}</option>
+                                        @endforeach
                                     </select>
 
                                     @error('primeros')
@@ -90,13 +90,13 @@
 
                                 <div class="col-md-6">
 
-                                    <select id="segundos" name="segundos"
+                                    <select id="segundos" name="productos[]"
                                         class="form-control @error('segundos') is-invalid @enderror"
                                         value="{{ old('segundos') }}" required autocomplete="segundos">
                                         <option selected disabled>Elige un segundo</option>
-                                        <option value="1">Solomillo</option>
-                                        <option value="2">Lubina</option>
-                                        <option value="3">Cochinillo</option>
+                                        @foreach ($segundos as $segundo)
+                                            <option value="{{ $segundo->id }}">{{ $segundo->nombre }}</option>
+                                        @endforeach
                                     </select>
 
                                     @error('segundos')
@@ -113,14 +113,13 @@
 
                                 <div class="col-md-6">
 
-                                    <select id="bebidas" name="bebidas"
+                                    <select id="bebidas" name="productos[]"
                                         class="form-control @error('bebidas') is-invalid @enderror"
                                         value="{{ old('bebidas') }}" required autocomplete="bebidas">
                                         <option selected disabled>Elige una bebida</option>
-                                        <option value="1">Agua</option>
-                                        <option value="2">Cocacola</option>
-                                        <option value="3">Vino</option>
-                                        <option value="4">Cerveza</option>
+                                        @foreach ($bebidas as $bebida)
+                                            <option value="{{ $bebida->id }}">{{ $bebida->nombre }}</option>
+                                        @endforeach
                                     </select>
 
                                     @error('bebidas')

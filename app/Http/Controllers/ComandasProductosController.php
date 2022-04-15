@@ -33,9 +33,14 @@ class ComandasProductosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($comanda_id, $producto_id)
     {
-        //
+        for ($i = 0; $i < count($producto_id); $i++) {
+            $comandas_productos = new ComandasProductos();
+            $comandas_productos->comanda_id = $comanda_id;
+            $comandas_productos->producto_id = $producto_id[$i];
+            $comandas_productos->save();
+        }
     }
 
     /**

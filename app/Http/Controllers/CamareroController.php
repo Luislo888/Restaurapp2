@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Producto;
 
 class CamareroController extends Controller
 {
@@ -25,7 +26,12 @@ class CamareroController extends Controller
      */
     public function index()
     {
-        return view('camarero');
+        $entrantes = Producto::all()->where('categoria', 'entrantes');
+        $primeros = Producto::all()->where('categoria', 'primeros');
+        $segundos = Producto::all()->where('categoria', 'segundos');
+        $bebidas = Producto::all()->where('categoria', 'bebidas');
+
+        return view('camarero', ['entrantes' => $entrantes, 'primeros' => $primeros, 'segundos' => $segundos, 'bebidas' => $bebidas]);
     }
 
     /**

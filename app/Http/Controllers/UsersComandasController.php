@@ -36,7 +36,6 @@ class UsersComandasController extends Controller
      */
     public function store($comanda_id)
     {
-        $user_id = auth::user()->id;
         $user_comanda = new UsersComandas();
 
         $user_comanda->user_id = auth::user()->id;
