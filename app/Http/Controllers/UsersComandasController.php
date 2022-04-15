@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comanda;
 use App\Models\UsersComandas;
-use App\Http\Controllers\UsersComandasController;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ComandaController extends Controller
+class UsersComandasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,28 +34,24 @@ class ComandaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($comanda_id)
     {
-        $comanda = new Comanda();
+        $user_id = auth::user()->id;
+        $user_comanda = new UsersComandas();
 
-        $comanda->mesa = $request->input('mesa');
-        $comanda->comentarios = $request->input('comentarios');
+        $user_comanda->user_id = auth::user()->id;
+        $user_comanda->comanda_id = $comanda_id;
 
-        $comanda->save();
-
-        $user_comanda = new UsersComandasController();
-        $user_comanda->store($comanda->id);
-
-        return redirect('/camarero')->with('success', 'Comanda creada');
+        $user_comanda->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Comanda  $comanda
+     * @param  \App\Models\UsersComandas  $usersComandas
      * @return \Illuminate\Http\Response
      */
-    public function show(Comanda $comanda)
+    public function show(UsersComandas $usersComandas)
     {
         //
     }
@@ -66,10 +59,10 @@ class ComandaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Comanda  $comanda
+     * @param  \App\Models\UsersComandas  $usersComandas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comanda $comanda)
+    public function edit(UsersComandas $usersComandas)
     {
         //
     }
@@ -78,10 +71,10 @@ class ComandaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comanda  $comanda
+     * @param  \App\Models\UsersComandas  $usersComandas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comanda $comanda)
+    public function update(Request $request, UsersComandas $usersComandas)
     {
         //
     }
@@ -89,10 +82,10 @@ class ComandaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comanda  $comanda
+     * @param  \App\Models\UsersComandas  $usersComandas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comanda $comanda)
+    public function destroy(UsersComandas $usersComandas)
     {
         //
     }

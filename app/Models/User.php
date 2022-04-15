@@ -43,4 +43,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function comanda()
+    {
+        return $this->belongsToMany(Comanda::class, 'users_comandas', 'user_id', 'comanda_id');
+    }
 }

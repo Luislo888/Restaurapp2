@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
 
 return new class extends Migration
 {
@@ -14,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comandas', function (Blueprint $table) {
+        Schema::create('users_comandas', function (Blueprint $table) {
             $table->id();
-            $table->integer('mesa');
-            $table->string('comentarios')->nullable();
-            $table->enum('estado', ['abierta', 'en curso', 'cerrada', 'cancelada'])->default('abierta');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('comanda_id')->constrained('comandas');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comandas');
+        Schema::dropIfExists('users_comandas');
     }
 };
