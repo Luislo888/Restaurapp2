@@ -15,14 +15,49 @@ class UsersComandasSeeder extends Seeder
      */
     public function run()
     {
-        $comanda1 = UsersComandas::create([
+        $comanda = UsersComandas::create([
             'user_id' => 2,
             'comanda_id' => 1,
         ]);
 
-        $comanda2 = UsersComandas::create([
+        $comanda = UsersComandas::create([
             'user_id' => 2,
             'comanda_id' => 2,
+        ]);
+
+        $comanda = UsersComandas::create([
+            'user_id' => 2,
+            'comanda_id' => 3,
+        ]);
+
+        $comanda = UsersComandas::create([
+            'user_id' => 2,
+            'comanda_id' => 4,
+        ]);
+
+        $comanda = UsersComandas::create([
+            'user_id' => 2,
+            'comanda_id' => 5,
+        ]);
+
+        $comanda = UsersComandas::create([
+            'user_id' => 2,
+            'comanda_id' => 6,
+        ]);
+
+        $comanda = UsersComandas::create([
+            'user_id' => 2,
+            'comanda_id' => 7,
+        ]);
+
+        $comanda = UsersComandas::create([
+            'user_id' => 2,
+            'comanda_id' => 8,
+        ]);
+
+        $comanda = UsersComandas::create([
+            'user_id' => 3,
+            'comanda_id' => 9,
         ]);
     }
 }

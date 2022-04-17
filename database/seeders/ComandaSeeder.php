@@ -15,14 +15,53 @@ class ComandaSeeder extends Seeder
      */
     public function run()
     {
-        $comanda1 = Comanda::create([
+        $comanda = Comanda::create([
             'mesa' => 1,
             'comentarios' => 'Sin tomate',
         ]);
 
-        $comanda1 = Comanda::create([
+        $comanda = Comanda::create([
+            'mesa' => 1,
+            'comentarios' => 'Con tomate',
+        ]);
+
+        $comanda = Comanda::create([
+            'mesa' => 1,
+            'comentarios' => 'Muy picante',
+        ]);
+
+        $comanda = Comanda::create([
+            'mesa' => 2,
+            'comentarios' => 'Con almendras',
+            'estado' => 'en curso',
+        ]);
+
+        $comanda = Comanda::create([
+            'mesa' => 2,
+            'comentarios' => 'Con albondigas',
+            'estado' => 'en curso',
+        ]);
+
+        $comanda = Comanda::create([
             'mesa' => 2,
             'comentarios' => 'Con tomate',
+            'estado' => 'en curso',
+        ]);
+
+        $comanda = Comanda::create([
+            'mesa' => 3,
+            'comentarios' => 'Con tomate',
+            'estado' => 'cerrada',
+        ]);
+        $comanda = Comanda::create([
+            'mesa' => 3,
+            'comentarios' => 'Con tomate',
+            'estado' => 'cerrada',
+        ]);
+        $comanda = Comanda::create([
+            'mesa' => 3,
+            'comentarios' => 'Con tomate',
+            'estado' => 'abierta',
         ]);
     }
 }

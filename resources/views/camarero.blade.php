@@ -162,4 +162,11 @@
             </div>
         </div>
     </div>
+    @foreach ($comandas as $comanda)
+        {{-- @if ($comanda->id == null)
+        @break
+    @endif --}}
+        ID: {{ $comanda->id }} - Mesa: {{ $comanda->mesa }} - Estado: {{ $comanda->estado }} -
+        Comentarios: {{ $comanda->comentarios }} - Camarero: {{ $camarero }}<br>
+    @endforeach
 @endsection
