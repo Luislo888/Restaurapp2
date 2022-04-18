@@ -13,10 +13,29 @@ h6{
 
 }
 
+.text-md-start {
+    margin-left: 0px!important;
+}
 
+.miDiv {
+    margin-left: -111px!important;
+    margin-right: -106px!important;
+}
 
+.card{
+    max-width: 357px;
+}
 
 .tituloCabecera{
     color: rgb(117, 1, 1);
     text-align: center;
+}
+
+.textoDerecha{
+    /* text-align: right!important;
+    right: -13px!important;
+    padding-right: -13px!important;
+    margin-right: -13px!important; */
+    margin-left: 50px!important;
+
 }
