@@ -163,10 +163,9 @@
         </div>
     </div>
     @foreach ($comandas as $comanda)
-        {{-- @if ($comanda->id == null)
-        @break
-    @endif --}}
-        ID: {{ $comanda->id }} - Mesa: {{ $comanda->mesa }} - Estado: {{ $comanda->estado }} -
-        Comentarios: {{ $comanda->comentarios }} - Camarero: {{ $camarero }}<br>
+        @if ($comanda->id != null)
+            ID: {{ $comanda->id }} - Mesa: {{ $comanda->mesa }} - Estado: {{ $comanda->estado }} -
+            Comentarios: {{ $comanda->comentarios }} - Camarero: {{ $camarero }}<br>
+        @endif
     @endforeach
 @endsection
