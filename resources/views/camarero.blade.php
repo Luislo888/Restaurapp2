@@ -165,7 +165,21 @@
     @foreach ($comandas as $comanda)
         @if ($comanda->id != null)
             ID: {{ $comanda->id }} - Mesa: {{ $comanda->mesa }} - Estado: {{ $comanda->estado }} -
-            Comentarios: {{ $comanda->comentarios }} - Camarero: {{ $camarero }}<br>
+            Comentarios: {{ $comanda->comentarios }} - Camarero: {{ $camarero }} - Productos:
+            {{ $comanda->productos }} - Fecha: {{ $comanda->created_at }}
+            - ASDF: {{ $comanda->asdf }}
+
+            @foreach ($productos as $producto)
+                @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'entrantes')
+                    {{ $producto->nombre }},
+                @endif
+            @endforeach
+            <br>
         @endif
+    @endforeach
+    @foreach ($productos as $producto)
+        ID: {{ $producto->id }} - Comanda_id: {{ $producto->comanda_id }} - Producto_id:
+        {{ $producto->producto_id }} -
+        Nombre: {{ $producto->nombre }} <br>
     @endforeach
 @endsection
