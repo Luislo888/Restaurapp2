@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
 @section('cabecera')
-    <h1>Administrador</h1>
-    <a href="{{ url('/camarero') }}" class="btn btn-primary " role="button" aria-disabled="true">Camareros
-    </a>
-    <a href="{{ url('/cocinero') }}" class="btn btn-primary " role="button" aria-disabled="true">Cocineros
-    </a>
+    <div id="tituloAdministrador">
+        <h1 id="">Administrador</h1>
+        <a href="{{ url('/camarero') }}" class="btn btn-primary botonesAdmin" role="button" aria-disabled="true">Camareros
+        </a>
+        <a href="{{ url('/cocinero') }}" class="btn btn-primary botonesAdmin" role="button" aria-disabled="true">Cocineros
+        </a>
+    </div>
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container marginTopBody">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -19,7 +21,7 @@
 
                     <div class="card-body">
                         @if (session('success'))
-                            <h6 class="alert alert-success">{{ session('success') }}</h6>
+                            <h6 class="alert alert-success notificacionSucces">{{ session('success') }}</h6>
                         @endif
                         <form method="POST" action="{{ route('register') }}">
                             @csrf

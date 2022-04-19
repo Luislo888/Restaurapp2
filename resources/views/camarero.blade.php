@@ -1,35 +1,35 @@
 @extends('layouts.app')
 
 @section('cabecera')
+    <h6 class="tituloRol">Camarero</h6>
     {{-- <h1> --}}
     <div class="collapse navbar-collapse text-center justify-content-center comandasNavTabs" id="navbarSupportedContent">
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
             {{-- Comadas: --}}
-            <span class="tituloRol">Camarero</span>
-            <span>
+            <button id="botonCrear" type="button" class="btn alert alert-primary">Crear</button>
+            <button id="botonAbiertas" type="button" class="btn alert alert-warning">Abiertas</button>
+            <button type="button" class="btn alert alert-danger">En curso</button>
+            <button type="button" class="btn alert alert-success">Cerradas</button>
 
-                <button onclick="location.href='#anchorCrearComanda'" href="#crearComanda" type="button"
-                    class="btn alert alert-primary">Crear</button>
-                <button type="button" class="btn alert alert-warning">Abiertas</button>
-                <button type="button" class="btn alert alert-danger">En curso</button>
-                <button type="button" class="btn alert alert-success">Cerradas</button>
-            </span>
         </div>
     </div>
     {{-- </h1> --}}
 @endsection
 
 @section('content')
-    <div class="container comandasBody">
+    <div class="container marginTopBody">
         <div class="row justify-content-center miDiv">
             <div id="anchorCrearComanda"></div>
             <div class="col-md-auto">
                 <div class="card">
                     <div class="card-header">
-                        <h6>{{ __('Crear Comanda') }}</h6>
+                        <h6 class="" id="tituloCrearComanda">{{ __('Crear Comanda') }}</h6>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body" id="bodyCrearComanda">
+                        @if (session('success'))
+                            <h6 class="alert alert-success notificacionSucces">{{ session('success') }}</h6>
+                        @endif
 
                         <form method="POST" action="{{ route('comanda') }}">
                             @csrf
@@ -162,10 +162,15 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-0">
-                                <div class="col-md-8 offset-md-3">
+
+                            <div class="row mb-0 justify-content-center">
+                                <div class="col-md-12 offset-md-3">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Crear Comanda') }}
+                                    </button>
+
+                                    <button type="reset" class="btn btn-danger">
+                                        {{ __('Limpiar') }}
                                     </button>
                                 </div>
                             </div>
@@ -175,11 +180,11 @@
                 </div>
             </div>
 
-
-            <div class="col-md-auto">
-                <div class="card mb-0">
-                    <div class="card-header">
-                        <h6>Comandas Abiertas</h6>
+            {{-- <div id="anchorComandasAbiertas"></div> --}}
+            <div class="col-md-auto" id="anchorComandasAbiertas">
+                <div class="card">
+                    <div class="card-header text-warning titulosComandas">
+                        <h6 id="tituloComandaAbierta">Comandas Abiertas</h6>
                     </div>
                 </div>
                 @foreach ($comandas as $comanda)
@@ -197,37 +202,49 @@
                                 {{-- - Camarero: {{ $camarero }}- --}}
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body bodyComandasAbiertas">
                                 <strong>Entrantes:</strong>
                                 @foreach ($productos as $producto)
                                     @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'entrantes')
-                                        {{ $producto->nombre }},
+                                        <div><br>{{ $producto->nombre }}</div>
                                     @endif
                                 @endforeach
                                 <br>
                                 <strong>Primeros:</strong>
                                 @foreach ($productos as $producto)
                                     @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'primeros')
-                                        {{ $producto->nombre }},
+                                        <div><br>{{ $producto->nombre }}</div>
                                     @endif
                                 @endforeach
                                 <br>
                                 <strong>Segundos:</strong>
                                 @foreach ($productos as $producto)
                                     @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'segundos')
-                                        {{ $producto->nombre }},
+                                        <div><br>{{ $producto->nombre }}</div>
                                     @endif
                                 @endforeach
                                 <br>
                                 <strong>Bebidas:</strong>
                                 @foreach ($productos as $producto)
                                     @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'bebidas')
-                                        {{ $producto->nombre }},
+                                        <div><br>{{ $producto->nombre }}</div>
                                     @endif
                                 @endforeach
                                 <br>
                                 <strong>Comentarios:</strong> {{ $comanda->comentarios }}
                                 <br>
+
+                                <div class="row mb-1 mt-1 botonesComandas">
+                                    <div class="col-md-12 offset-md-3 mb-1 mt-1 justify-content-center">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Editar ') }}
+                                        </button>
+
+                                        <button type="submit" class="btn btn-danger">
+                                            {{ __('Cancelar ') }}
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     @endif

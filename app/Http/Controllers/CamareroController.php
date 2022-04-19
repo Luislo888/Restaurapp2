@@ -39,12 +39,22 @@ class CamareroController extends Controller
 
         $camarero = Auth::user()->name;
 
-        $comandas =  Comanda::addSelect([
-            'id' => UsersComandas::select('id')
-                ->whereColumn('comanda_id', 'comandas.id')
-                ->where('user_id', Auth::user()->id)
-            // ->where('comandas.estado', 'abierta')
-        ])->get();
+        if (Auth::user()->rol == 1) {
+            $comandas =  Comanda::addSelect([
+                'id' => UsersComandas::select('id')
+                    ->whereColumn('comanda_id', 'comandas.id')
+                // ->where('user_id', Auth::user()->id)
+                // ->where('comandas.estado', 'abierta')
+            ])->get();
+        } else {
+            $comandas =  Comanda::addSelect([
+                'id' => UsersComandas::select('id')
+                    ->whereColumn('comanda_id', 'comandas.id')
+                    ->where('user_id', Auth::user()->id)
+                // ->where('comandas.estado', 'abierta')
+            ])->get();
+        }
+
 
         $productos = ComandasProductos::addSelect([
             'id' => Producto::select('id')
