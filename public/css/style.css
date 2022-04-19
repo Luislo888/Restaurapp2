@@ -17,25 +17,85 @@ h6{
     margin-left: 0px!important;
 }
 
+.card{
+    max-width: 357px;
+    margin-bottom: 50px;
+}
+
+
+/* CUSTOM IDS AND CLASSES */
+
 .miDiv {
     margin-left: -111px!important;
     margin-right: -106px!important;
 }
 
-.card{
-    max-width: 357px;
-}
-
 .tituloCabecera{
     color: rgb(117, 1, 1);
     text-align: center;
+    margin-top: 10px;
 }
 
-.textoDerecha{
-    /* text-align: right!important;
-    right: -13px!important;
-    padding-right: -13px!important;
-    margin-right: -13px!important; */
-    margin-left: 50px!important;
-
+.tituloRol{
+    margin-right: 20px;
+    margin-top: 0px;
+    font-size: 30px;
+    font-weight: 600;
 }
+
+.comandasNavTabs button {
+    height: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.comandasBody{
+    margin-top: 88px;
+    /* margin-left: -111px!important;
+    margin-right: -106px!important; */
+    /* padding-top: 104px;
+margin-top: -103px!important; */
+}
+
+#anchorCrearComanda{
+    margin-top: -100px!important;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 1400px) { 
+    .miDiv{
+        margin-left: initial;
+        margin-right: initial;
+    }
+    .card{
+        max-width: initial;
+        margin: auto;
+    }
+    .navbar{
+        margin-right: -78px;    
+    }
+ }
+
+@media (max-width: 767px) { 
+    .miDiv{
+        margin-left: initial;
+        margin-right: initial;
+    }
+    .card{
+        max-width: initial;
+        margin-left: 100px;
+        margin-right: 50px;
+    }
+    .comandasNavTabs{
+        margin-top: -4px;
+        position: absolute;
+        margin-left: 132px;
+    }
+    .comandasBody{
+        margin-top: 109px;
+    }
+}
+ 

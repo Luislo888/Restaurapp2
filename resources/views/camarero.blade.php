@@ -1,12 +1,28 @@
 @extends('layouts.app')
 
 @section('cabecera')
-    <h1>Camarero</h1>
+    {{-- <h1> --}}
+    <div class="collapse navbar-collapse text-center justify-content-center comandasNavTabs" id="navbarSupportedContent">
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            {{-- Comadas: --}}
+            <span class="tituloRol">Camarero</span>
+            <span>
+
+                <button onclick="location.href='#anchorCrearComanda'" href="#crearComanda" type="button"
+                    class="btn alert alert-primary">Crear</button>
+                <button type="button" class="btn alert alert-warning">Abiertas</button>
+                <button type="button" class="btn alert alert-danger">En curso</button>
+                <button type="button" class="btn alert alert-success">Cerradas</button>
+            </span>
+        </div>
+    </div>
+    {{-- </h1> --}}
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container comandasBody">
         <div class="row justify-content-center miDiv">
+            <div id="anchorCrearComanda"></div>
             <div class="col-md-auto">
                 <div class="card">
                     <div class="card-header">
@@ -19,7 +35,8 @@
                             @csrf
 
                             <div class="row mb-4">
-                                <label for="mesa" class="col-md-5 col-form-label text-md-start">{{ __('Nº Mesa') }}</label>
+                                <label for="mesa"
+                                    class="col-md-5 col-form-label text-md-start">{{ __('Nº Mesa') }}</label>
 
                                 <div class="col-md-7">
                                     <input id="mesa" min="1" max="6" type="number"
@@ -156,6 +173,65 @@
 
                     </div>
                 </div>
+            </div>
+
+
+            <div class="col-md-auto">
+                <div class="card mb-0">
+                    <div class="card-header">
+                        <h6>Comandas Abiertas</h6>
+                    </div>
+                </div>
+                @foreach ($comandas as $comanda)
+                    @if ($comanda->id != null)
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                {{ $comanda->created_at }}
+                                <br>
+                                <strong>Mesa:</strong> {{ $comanda->mesa }}
+                                <span class="textoDerecha"><strong>Nº Comanda:</strong>
+                                    {{ $comanda->id }}</span>
+                                {{-- <br> --}}
+                                {{-- <br> --}}
+                                {{-- - Estado:{{ $comanda->estado }} --}}
+                                {{-- - Camarero: {{ $camarero }}- --}}
+                            </div>
+
+                            <div class="card-body">
+                                <strong>Entrantes:</strong>
+                                @foreach ($productos as $producto)
+                                    @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'entrantes')
+                                        {{ $producto->nombre }},
+                                    @endif
+                                @endforeach
+                                <br>
+                                <strong>Primeros:</strong>
+                                @foreach ($productos as $producto)
+                                    @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'primeros')
+                                        {{ $producto->nombre }},
+                                    @endif
+                                @endforeach
+                                <br>
+                                <strong>Segundos:</strong>
+                                @foreach ($productos as $producto)
+                                    @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'segundos')
+                                        {{ $producto->nombre }},
+                                    @endif
+                                @endforeach
+                                <br>
+                                <strong>Bebidas:</strong>
+                                @foreach ($productos as $producto)
+                                    @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'bebidas')
+                                        {{ $producto->nombre }},
+                                    @endif
+                                @endforeach
+                                <br>
+                                <strong>Comentarios:</strong> {{ $comanda->comentarios }}
+                                <br>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
 
 
@@ -310,64 +386,6 @@
 
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-auto">
-                <div class="card">
-                    <div class="card-header">
-                        <h6>Comandas Abiertas</h6>
-                    </div>
-                </div>
-                @foreach ($comandas as $comanda)
-                    @if ($comanda->id != null)
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                {{ $comanda->created_at }}
-                                <br>
-                                <strong>Mesa:</strong> {{ $comanda->mesa }}
-                                <span class="textoDerecha"><strong>Nº Comanda:</strong>
-                                    {{ $comanda->id }}</span>
-                                {{-- <br> --}}
-                                {{-- <br> --}}
-                                {{-- - Estado:{{ $comanda->estado }} --}}
-                                {{-- - Camarero: {{ $camarero }}- --}}
-                            </div>
-
-                            <div class="card-body">
-                                <strong>Entrantes:</strong>
-                                @foreach ($productos as $producto)
-                                    @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'entrantes')
-                                        {{ $producto->nombre }},
-                                    @endif
-                                @endforeach
-                                <br>
-                                <strong>Primeros:</strong>
-                                @foreach ($productos as $producto)
-                                    @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'primeros')
-                                        {{ $producto->nombre }},
-                                    @endif
-                                @endforeach
-                                <br>
-                                <strong>Segundos:</strong>
-                                @foreach ($productos as $producto)
-                                    @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'segundos')
-                                        {{ $producto->nombre }},
-                                    @endif
-                                @endforeach
-                                <br>
-                                <strong>Bebidas:</strong>
-                                @foreach ($productos as $producto)
-                                    @if ($producto->comanda_id == $comanda->id && $producto->categoria == 'bebidas')
-                                        {{ $producto->nombre }},
-                                    @endif
-                                @endforeach
-                                <br>
-                                <strong>Comentarios:</strong> {{ $comanda->comentarios }}
-                                <br>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
             </div>
 
 
