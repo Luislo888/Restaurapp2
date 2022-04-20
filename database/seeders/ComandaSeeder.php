@@ -15,49 +15,58 @@ class ComandaSeeder extends Seeder
      */
     public function run()
     {
+        // COMANDA ID 1 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 1,
             'comentarios' => 'Sin tomate',
         ]);
-
+        // COMANDA ID 2 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 1,
             'comentarios' => 'Con tomate',
         ]);
-
+        // COMANDA ID 3 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 1,
             'comentarios' => 'Muy picante',
         ]);
-
+        // COMANDA ID 4 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 2,
             'comentarios' => 'Con almendras',
             'estado' => 'en curso',
         ]);
-
+        // COMANDA ID 5 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 2,
             'comentarios' => 'Con albondigas',
             'estado' => 'en curso',
         ]);
-
+        // COMANDA ID 6 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 2,
             'comentarios' => 'Con tomate',
             'estado' => 'en curso',
         ]);
-
+        // COMANDA ID 7 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 3,
             'comentarios' => 'Con tomate',
             'estado' => 'cerrada',
         ]);
+        // COMANDA ID 8 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 3,
             'comentarios' => 'Con tomate',
             'estado' => 'cerrada',
         ]);
+        // COMANDA ID 9 -----------------------------------
+        $comanda = Comanda::create([
+            'mesa' => 3,
+            'comentarios' => 'Sin pepinillos',
+            'estado' => 'cerrada',
+        ]);
+        // COMANDA ID 10 -----------------------------------
         $comanda = Comanda::create([
             'mesa' => 3,
             'comentarios' => 'Con tomate',

@@ -34,20 +34,20 @@ class UserSeeder extends Seeder
             'rol' => '2',
         ]);
 
-        $userCamarero2 = User::create([
-            'name' => 'Camarero Alberto',
-            'last_name' => 'Solana',
-            'email' => 'camarero2@gmail.com',
-            'password' => Hash::make('1234'),
-            'rol' => '2',
-        ]);
-
         $userCocinero = User::create([
             'name' => 'Cocinero Laura',
             'last_name' => 'Carmona',
             'email' => 'cocinero@gmail.com',
             'password' => Hash::make('1234'),
             'rol' => '3',
+        ]);
+
+        $userCamarero2 = User::create([
+            'name' => 'Camarero Alberto',
+            'last_name' => 'Solana',
+            'email' => 'camarero2@gmail.com',
+            'password' => Hash::make('1234'),
+            'rol' => '2',
         ]);
     }
 }
