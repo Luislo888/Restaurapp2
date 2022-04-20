@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="col-md-1 botonCantidad ">
                                     <button type="button" class="btn sinFocus" id="botonAgregarEntrante">
-                                        <i class="fa-solid fa-circle-plus"></i>
+                                        <i class="fa-solid fa-circle-plus "></i>
                                     </button>
                                 </div>
                                 <div class="col-md-1 botonCantidad">

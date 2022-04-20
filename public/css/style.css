@@ -1,4 +1,9 @@
 
+strong{
+    font-weight: 600;
+    color: rgb(45, 45, 45);
+}
+
 h6{
     margin-bottom: 0px!important;
 }
@@ -48,11 +53,25 @@ button{
     color: green;
 }
 
+.fa-circle-plus30::before {
+    content: "\f055";
+    font-size: 30px;
+    color: green;
+}
+
 .fa-circle-minus::before {
     content: "\f056";
     font-size: 25px;
     color: red;
 }
+
+.fa-circle-minus30::before {
+    content: "\f056";
+    font-size: 30px;
+    color: red;
+}
+
+
 
 
 /* CUSTOM IDS AND CLASSES ----------------------------------------------------------------------------- */
@@ -67,6 +86,7 @@ button{
     text-align: center;
     margin-top: 10px;
 }
+
 
 .tituloRol{
     margin-right: 20px;
