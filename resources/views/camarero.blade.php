@@ -71,8 +71,7 @@
                                 <div class="col-md-2">
                                     <input id="" min="1" type="number"
                                         class="form-control @error('cantidad') is-invalid @enderror" name="cantidad[]"
-                                        value="{{ old('cantidad') }}" placeholder="1" required autocomplete="cantidad"
-                                        autofocus>
+                                        value="{{ old('cantidad') }}" placeholder="1" autocomplete="cantidad" autofocus>
 
                                     @error('cantidad')
                                         <span class="invalid-feedback" role="alert">
@@ -116,8 +115,7 @@
                                 <div class="col-md-2">
                                     <input id="" min="1" type="number"
                                         class="form-control @error('cantidad') is-invalid @enderror" name="cantidad[]"
-                                        value="{{ old('cantidad') }}" placeholder="1" required autocomplete="cantidad"
-                                        autofocus>
+                                        value="{{ old('cantidad') }}" placeholder="1" autocomplete="cantidad" autofocus>
 
                                     @error('cantidad')
                                         <span class="invalid-feedback" role="alert">
@@ -162,8 +160,7 @@
                                 <div class="col-md-2">
                                     <input id="" min="1" type="number"
                                         class="form-control @error('cantidad') is-invalid @enderror" name="cantidad[]"
-                                        value="{{ old('cantidad') }}" placeholder="1" required autocomplete="cantidad"
-                                        autofocus>
+                                        value="{{ old('cantidad') }}" placeholder="1" autocomplete="cantidad" autofocus>
 
                                     @error('cantidad')
                                         <span class="invalid-feedback" role="alert">
@@ -207,8 +204,7 @@
                                 <div class="col-md-2">
                                     <input id="" min="1" type="number"
                                         class="form-control @error('cantidad') is-invalid @enderror" name="cantidad[]"
-                                        value="{{ old('cantidad') }}" placeholder="1" required autocomplete="cantidad"
-                                        autofocus>
+                                        value="{{ old('cantidad') }}" placeholder="1" autocomplete="cantidad" autofocus>
 
                                     @error('cantidad')
                                         <span class="invalid-feedback" role="alert">
