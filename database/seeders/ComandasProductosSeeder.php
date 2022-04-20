@@ -31,6 +31,56 @@ class ComandasProductosSeeder extends Seeder
             'producto_id' => 3,
             'cantidad' => 1,
         ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 4,
+            'cantidad' => 1,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 5,
+            'cantidad' => 2,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 6,
+            'cantidad' => 1,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 7,
+            'cantidad' => 1,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 8,
+            'cantidad' => 2,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 9,
+            'cantidad' => 1,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 10,
+            'cantidad' => 1,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 11,
+            'cantidad' => 2,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 12,
+            'cantidad' => 1,
+        ]);
+        $comanda = ComandasProductos::create([
+            'comanda_id' => 1,
+            'producto_id' => 13,
+            'cantidad' => 1,
+        ]);
         // COMANDA ID 2 -----------------------------------
         $comanda = ComandasProductos::create([
             'comanda_id' => 2,
@@ -49,7 +99,7 @@ class ComandasProductosSeeder extends Seeder
         ]);
         $comanda = ComandasProductos::create([
             'comanda_id' => 2,
-            'producto_id' => 1,
+            'producto_id' => 10,
             'cantidad' => 1,
         ]);
         $comanda = ComandasProductos::create([

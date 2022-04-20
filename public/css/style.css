@@ -1,7 +1,6 @@
 
 h6{
     margin-bottom: 0px!important;
-
 }
 
 .alert-success{
@@ -10,7 +9,6 @@ h6{
 
 .text-md-start{
     margin-left: 18px!important;
-
 }
 
 .text-md-start {
@@ -19,7 +17,6 @@ h6{
 
 .card{
     max-width: 357px;
-    margin-bottom: 50px;
 }
 
 .btn-primary{
@@ -35,11 +32,30 @@ h6{
 .navbar-brand{
     font-family: 'Lucida Handwriting', sans-serif;
     font-size: 24px;
+}
 
+button{
+    height: 30px!important;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+    font-size: 14px!important;
+    margin-top: 10px!important;
+}
+
+.fa-circle-plus::before {
+    content: "\f055";
+    font-size: 25px;
+    color: green;
+}
+
+.fa-circle-minus::before {
+    content: "\f056";
+    font-size: 25px;
+    color: red;
 }
 
 
-/* CUSTOM IDS AND CLASSES */
+/* CUSTOM IDS AND CLASSES ----------------------------------------------------------------------------- */
 
 .miDiv {
     margin-left: -111px!important;
@@ -68,16 +84,16 @@ h6{
     margin-top: 10px;
 }
 
-button{
-    height: 30px!important;
-    padding-top: 0px!important;
-    padding-bottom: 0px!important;
-    font-size: 14px!important;
-    margin-top: 10px!important;
-}
-
 .botonesAdmin{
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"!important;
+}
+
+.botonCantidad{
+    margin-top: -5px;    
+}
+
+.botonCantidad:nth-child(even){
+    margin-left: -22px;
 }
 
 .marginTopBody{
@@ -102,7 +118,12 @@ button{
 
 #tituloComandaAbierta{
     color: #e5ad06;
+}
 
+.bodyComandas div{
+    margin-left: 30px;
+    margin-top: -28px;
+    margin-bottom: -28px;
 }
 
 .bodyComandasAbiertas{    
@@ -111,14 +132,30 @@ button{
     padding-bottom: 9px;
 }
 
-.bodyComandasAbiertas div{
-    /* color: #e5ad06; */
-    /* padding-left: 33px!important; */
-    margin-left: 30px;
-    /* height: 15px; */
-    margin-top: -28px;
-    margin-bottom: -28px;
+#tituloComandaEnCurso{
+    color: #f91629;
 }
+
+.bodyComandasEnCurso{
+    background-color: #F8D7DA;
+    padding-top: 6px;
+    padding-bottom: 9px;
+}
+
+#tituloComandaCerrada{
+    color: #26a46c;
+}
+
+.bodyComandasCerradas{
+    background-color: #D1E7DD;
+    padding-top: 6px;
+    padding-bottom: 9px;
+}
+
+#cardCrear{    
+    min-width: 472px;
+}
+
 /* LOGIN */
 
 #tituloLogin{
@@ -129,6 +166,12 @@ button{
     font-family: 'Lucida Handwriting', sans-serif;
 }
 
+#cardLogin{
+    max-width: initial;
+}
+
+/* ADMINISTRADOR */
+
 #tituloAdministrador{
     margin-right: 160px;
     margin-top: -10px;
@@ -138,42 +181,59 @@ button{
     font-family: 'Lucida Handwriting', sans-serif;
 }
 
-#cardLogin{
-    max-width: initial;
+.sinFocus:focus {
+    box-shadow: none!important;
 }
+
 
 /* RESPONSIVE */
 
 @media (min-width: 1400px) { 
+
+    .titulosComandas{
+        margin-bottom: -1px!important;
+    }
+
     .miDiv{
         margin-left: initial;
         margin-right: initial;
     }
+
     .card{
         margin: auto;
     }
+
     .navbar{
         margin-right: -78px;    
     }
  }
 
 @media (max-width: 767px) { 
+
+    .titulosComandas{
+        margin-bottom: -1px!important;
+    }
+
     .miDiv{
         margin-left: initial;
         margin-right: initial;
     }
+
     .card{
         max-width: initial;
         margin-left: 100px;
         margin-right: 50px;
     }
+
     .comandasNavTabs{
         margin-top: -4px;
         position: absolute;
         margin-left: 132px;
     }
+
     .comandasBody{
         margin-top: 135px;
     }
 }
  
+
